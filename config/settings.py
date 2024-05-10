@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = getenv('SECRET_KEY')
+SECRET_KEY = 'Bobur'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,10 +36,12 @@ THIRD_APPS = [
     'drf_yasg',
     'rest_framework',
     'rest_framework_simplejwt',
+    'django_filters',
 ]
 
 MY_APPS = [
     'users',
+    'app_shnk',
 ]
 
 INSTALLED_APPS = DJANGO_DEFAULT_APPS + THIRD_APPS + MY_APPS
@@ -128,9 +130,9 @@ STATIC_URL = 'static/'
 if DEBUG is False:
     # STATIC_ROOT = '/home/my_domain/domain_dir/static/'
     STATIC_ROOT = 'static'
-
+#
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    BASE_DIR / "static"
 ]
 
 # Default primary key field type
@@ -202,8 +204,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = getenv('EMAIL_HOST_USER')
+EMAIL_HOST_USER = "fmetube01@gmail.com"
 # https://myaccount.google.com/apppasswords?rapt=AEjHL4PYdZpsTQqErM5VNV1NzBbxaWGWaAuFbG12GJMlrDId-ycKtnRDq5MSuAg_FmxYqa-gs1_wnVbAFPqwO2hfSOSpRPX0JMIYIr8aRewzquXL0x9t3us
-EMAIL_HOST_PASSWORD = getenv('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_PASSWORD = "rdro dhfv wutu tigv"
 # EMAIL_USE_SSL = True
 
+AUTH_USER_MODEL = 'users.CustomUser'
